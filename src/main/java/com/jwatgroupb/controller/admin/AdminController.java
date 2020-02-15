@@ -199,20 +199,21 @@ public class AdminController {
 	  }   
 	  
 	  ///EDIT USER || EDIT PRODUCT
-	  @RequestMapping(value="admin/editUser/{userName}")
-	  public ModelAndView userUpdate(@PathVariable("userName") String userName){
+	  @RequestMapping(value="admin/editUser/{id}")
+	  public ModelAndView userUpdate(@PathVariable("id") long id){
 	   ModelAndView mav = new ModelAndView("admin/userEditForm");
-	   UserEntity user = adminService.findUserByUserName(userName);
+	   UserEntity user = adminService.findUserById(id);
 	   mav.addObject("userEditForm",user);
 	   System.out.println("USER EDIT FORM LOADED");
+	   System.out.println(mav);
 	   return mav;
 	  }    
 	  
 	  @RequestMapping(value="admin/editUser/saveEditUser", method=RequestMethod.POST)
-	  public ModelAndView userUpdateSave(@RequestParam("userName") String userName, @RequestParam("roleUserEntity.id") Long roleid, @ModelAttribute("userEditForm") UserEntity user ){
+	  public ModelAndView userUpdateSave(@RequestParam("id") long id, @RequestParam("roleUserEntity.id") Long roleid, @ModelAttribute("userEditForm") UserEntity user ){
 		  RoleUserEntity role = roleUserRepository.findOne(roleid);
 		  user.setRoleUserEntity(role);
-		  adminService.userUpdate(user);	
+		  adminService.userUpdate(user,id);	
 	   return new ModelAndView("redirect:/admin/listUser/1");
 	}
 	  

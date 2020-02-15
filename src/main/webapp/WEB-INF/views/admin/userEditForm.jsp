@@ -7,44 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Home</title>
 </head>
-<%-- <body>
-	<h1>Edit User </h1>
-	
-        <form:form method="POST" action="saveEditUser" modelAttribute= "userEditForm">
-        
-  
-		
-						 <table>				
-						  
-                  </table>
-      
-               
-				
-				
-	
-					<div class="modal-footer" style = "	text-align: left;">
 
-						<input type="submit" class="btn btn-info" value="Save">  
-						<a onclick="history.go(-1)"> <input type="button" class="btn btn-default"  value="Cancel"> 	
-						</a>
-						
-							
-					</div>
-						
-        
-       
-     
-             
-           <!--     
-                
-                <tr>
-                    <td><input type="submit" value="Save"/></td>
-                </tr>
-               -->
-        </form:form>
-        
-
-</body> --%>
 <body>
 	
 	
@@ -66,11 +29,11 @@
 			</div>
 		</div >
              <table>
-     	
- 				<tr>
-                    <td><form:label path="userName">User Name : ${userName}</form:label></td>
-                    <td><form:hidden path="userName"/></td>
+             <tr>
+                    <td><form:label path="id">ID : ${id}</form:label></td>
+                    <td><form:hidden path="id"/></td>
                 </tr> 
+     	
                 <tr>
                     <td><form:label required="required" type = "email" path="email">Email</form:label></td>
                     <td><form:input required="required" type = "email" path="email"/></td>
@@ -84,7 +47,7 @@
                     <td><form:label required="required" path="active">Active</form:label></td>
                     <td>
                      <form:radiobutton path= "active" value = "1" label = "Active"/>
-                    <form:radiobutton path= "active" value = "0" label = "Inactive"/>
+                     <form:radiobutton path= "active" value = "0" label = "Inactive"/>
                     </td>
                 </tr>
                 <tr>

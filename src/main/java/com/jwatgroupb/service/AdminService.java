@@ -66,8 +66,8 @@ public class AdminService {
 			return userRepository.findOne(id);
 		}
 	   @Transactional
-	public void userUpdate(UserEntity user) {
-		userRepository.update(user.getUserName(),user.getEmail(),user.getPassword(),user.getActive(), user.getRoleUserEntity());
+	public void userUpdate(UserEntity user, long id) {
+		userRepository.update(id,user.getEmail(),user.getPassword(),user.getActive(), user.getRoleUserEntity());
 	}
 	   @Transactional
 	public void productUpdate(ProductEntity product,long id) {
