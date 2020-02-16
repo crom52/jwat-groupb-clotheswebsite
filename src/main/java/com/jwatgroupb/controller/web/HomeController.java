@@ -65,14 +65,10 @@ public class HomeController {
 	
 	
 	//--Phong
-	@RequestMapping(value = { "/", "/HomePage","" }, method = RequestMethod.GET)
+	@RequestMapping(value = { "/", "/HomePage" }, method = RequestMethod.GET)
 	public ModelAndView homePage() {
-		ModelAndView mav = new ModelAndView("web/home");
+		ModelAndView mav = new ModelAndView("web/HomePage");
 		int page = 1;
-//		List<ProductEntity> listProduct = productService.findAllProduct();
-//		List<CategoryEntity> listCategory = categoryService.listCategory();
-//		mav.addObject("listCategory", listCategory);
-//		mav.addObject("listProduct", listProduct);
 		int totalProduct =(int) productRepository.count();
 		int totalPage = (totalProduct%6!=0)?(totalProduct/6+1):totalProduct/6;
 		List<ProductEntity> listProduct = productService.find10Product(page);
@@ -89,7 +85,7 @@ public class HomeController {
 	
 	@RequestMapping(value =  {"/HomePage/{page}","/{page}"} , method = RequestMethod.GET)
 	public ModelAndView homePage01(HttpServletRequest request ,@PathVariable (value = "page") int page) {
-		ModelAndView mav = new ModelAndView("web/home");
+		ModelAndView mav = new ModelAndView("web/HomePage");
 		if (page==0) {
 			page=1;
 		} ;
