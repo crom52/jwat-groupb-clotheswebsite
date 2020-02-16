@@ -78,7 +78,7 @@
 
 
 	<welcome-file-list>
-		<welcome-file>/</welcome-file>
+		<welcome-file>/1</welcome-file>
 	</welcome-file-list>
 
 

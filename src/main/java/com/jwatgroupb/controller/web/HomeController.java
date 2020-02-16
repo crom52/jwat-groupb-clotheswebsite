@@ -65,7 +65,7 @@ public class HomeController {
 	
 	
 	//--Phong
-	@RequestMapping(value = { "/", "/HomePage" }, method = RequestMethod.GET)
+	@RequestMapping(value = { "/", "/HomePage","/1" }, method = RequestMethod.GET)
 	public ModelAndView homePage() {
 		ModelAndView mav = new ModelAndView("web/home");
 		
