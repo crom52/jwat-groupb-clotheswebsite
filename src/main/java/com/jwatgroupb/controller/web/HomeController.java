@@ -65,10 +65,9 @@ public class HomeController {
 	
 	
 	//--Phong
-	@RequestMapping(value = { "/", "/HomePage","/1" }, method = RequestMethod.GET)
+	@RequestMapping(value = { "/", "/HomePage","" }, method = RequestMethod.GET)
 	public ModelAndView homePage() {
 		ModelAndView mav = new ModelAndView("web/home");
-		
 		int page = 1;
 //		List<ProductEntity> listProduct = productService.findAllProduct();
 //		List<CategoryEntity> listCategory = categoryService.listCategory();
